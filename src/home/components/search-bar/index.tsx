@@ -6,7 +6,6 @@ interface SearchBarProps {
     onChange: (value: string) => void
 }
 
-
 export const SearchBar : React.FC<SearchBarProps> = (Props : SearchBarProps) => {
     const [state, setState] = useState({value : "" });
     
