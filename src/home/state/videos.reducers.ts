@@ -1,12 +1,16 @@
-import {IVideoState, IVideo} from './videos.state';
+import {IVideoState} from './videos.state';
+import { VideoActions , VideosActionType } from '../state/videos.actions';
 
 
 const init : IVideoState = {
-   videoList : [{image : 'test' , title : 'test' , content : ' test' }]
+   videoList : null
 }
 
-export default function VideosReducer(state : IVideoState = init , action : any) : IVideoState {
+export default function VideosReducer(state : IVideoState = init , action : VideosActionType) : IVideoState {
     switch (action.type) {
+        case VideoActions.GET_VIDEOS_COMPLETED : {
+           return {...state, videoList : action.payload}
+        }
         default : 
            return state
     }

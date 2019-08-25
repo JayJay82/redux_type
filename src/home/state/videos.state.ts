@@ -5,5 +5,5 @@ export interface IVideo {
 }
 
 export interface IVideoState {
-    videoList : IVideo[]
+    videoList : IVideo[] | null
 }
