@@ -1,5 +1,5 @@
 import React from "react";
-import { IVideo } from "../../state/videos.state";
+import { IVideo } from "../../state/videos.type";
 import { VideoItem } from "../video-item";
 import { useDispatch } from "react-redux";
 import { selectVideo } from "../../state/videos.actions";

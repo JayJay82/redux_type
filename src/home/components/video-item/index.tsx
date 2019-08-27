@@ -1,5 +1,5 @@
 import React from "react";
-import { IVideo } from "../../state/videos.state";
+import { IVideo } from "../../state/videos.type";
 
 interface VideoItemProps {
   onSelected: (video: IVideo) => void;

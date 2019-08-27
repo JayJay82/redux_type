@@ -2,10 +2,11 @@ import React, { Dispatch } from "react";
 import { SearchBar } from "./components/search-bar";
 import { IRootState } from "../_configuration/store";
 import { connect } from "react-redux";
-import { videoListSelector } from "./state/videos.selectors";
+import { videoListSelector, selectedVideoSelector } from "./state/videos.selectors";
 import { VideosActionType, getVideos } from "./state/videos.actions";
 import { VideoList } from "./components/videos-list";
 import _ from "lodash";
+import { VideoDetail } from "./components/video-detail";
 
 class Home extends React.Component<HomeProps> {
   changeDebounce = _.debounce((term: string) => {
@@ -18,6 +19,7 @@ class Home extends React.Component<HomeProps> {
         <SearchBar onChange={this.changeDebounce} />
         <div className="row">
           <VideoList videoList={this.props.videoList} />
+          <VideoDetail video={this.props.video} />
         </div>
       </>
     );
@@ -26,7 +28,8 @@ class Home extends React.Component<HomeProps> {
 
 const mapStateToProps = (state: IRootState) => {
   return {
-    videoList: videoListSelector(state)
+    videoList: videoListSelector(state),
+    video : selectedVideoSelector(state)
   };
 };
 

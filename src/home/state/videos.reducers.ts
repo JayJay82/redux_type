@@ -1,4 +1,4 @@
-import { IVideoState } from "./videos.state";
+import { IVideoState } from "./videos.type";
 import { VideoActions, VideosActionType } from "../state/videos.actions";
 
 const init: IVideoState = {
@@ -15,7 +15,6 @@ export default function VideosReducer(
       return { ...state, videoList: action.payload };
     }
     case VideoActions.SELECT_VIDEO: {
-      console.log("reducers", action.payload);
       return { ...state, selectedVIdeo: action.payload };
     }
     default:

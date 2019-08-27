@@ -1,6 +1,6 @@
 import { Selector, createSelector } from "reselect";
 import { IRootState } from "../../_configuration/store";
-import { IVideoState, IVideo } from "./videos.state";
+import { IVideoState, IVideo } from "./videos.type";
 
 const videosReducer: Selector<IRootState, IVideoState> = state => state.videos;
 

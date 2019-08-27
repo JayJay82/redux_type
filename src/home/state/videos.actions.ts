@@ -1,6 +1,6 @@
 import { action } from "typesafe-actions";
 import { ActionType } from "typesafe-actions";
-import { IVideo } from "./videos.state";
+import { IVideo } from "./videos.type";
 
 export enum VideoActions {
   GET_VIDEOS = "GET_VIDEOS_REQUEST",
@@ -18,7 +18,6 @@ export const getVideosCompleted = (response: IVideo[]) => {
 };
 
 export const selectVideo = (video: IVideo) => {
-  console.log("action", video);
   return action(VideoActions.SELECT_VIDEO, video);
 };
 export type VideosActionType = ActionType<

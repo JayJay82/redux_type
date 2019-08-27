@@ -1,4 +1,4 @@
-import {IVideoState} from '../home/state/videos.state';
+import {IVideoState} from '../home/state/videos.type';
 import VideosReducer from '../home/state/videos.reducers';
 import { combineReducers, createStore, applyMiddleware,compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
